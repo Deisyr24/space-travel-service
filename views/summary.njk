@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <!-- Back link -->
+    <a href="/destination" class="govuk-back-link">Back</a>
+
+    <!-- Title -->
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Check your answers</h1>
+
+    <!-- Subtitle -->
+    <p class="govuk-body-l govuk-!-margin-bottom-6">Make sure your details are correct before continuing.</p>
+
+    <!-- Summary list -->
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">First name</dt>
+            <dd class="govuk-summary-list__value">{{ firstName }}</dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="/destination?edit=firstName">Change</a>
+            </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Last name</dt>
+            <dd class="govuk-summary-list__value">{{ lastName }}</dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="/destination?edit=lastName">Change</a>
+            </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Address</dt>
+            <dd class="govuk-summary-list__value">
+                {{ addressLine1 }}<br>
+                {{ addressLine2 }}<br>
+                {{ county }}<br>
+                {{ country }}<br>
+                {{ postcode }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="/destination?edit=address">Change</a>
+            </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Destination</dt>
+            <dd class="govuk-summary-list__value">{{ destination }}</dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="/destination?edit=destination">Change</a>
+            </dd>
+        </div>
+    </dl>
+
+    <!-- Continue button -->
+    <form method="POST" action="/confirmation">
+        <button type="submit" class="govuk-button">Confirm and continue</button>
+    </form>
+{% endblock %}

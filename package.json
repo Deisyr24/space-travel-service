@@ -1,0 +1,25 @@
+{
+  "name": "space-travel-service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deisyr24/space-travel-service.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/deisyr24/space-travel-service/issues"
+  },
+  "homepage": "https://github.com/deisyr24/space-travel-service#readme",
+  "dependencies": {
+    "express": "^4.21.2",
+    "govuk-frontend": "^5.8.0",
+    "nunjucks": "^3.2.4"
+  }
+}

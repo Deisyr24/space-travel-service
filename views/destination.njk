@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <!-- Back link at the top -->
+    <a href="/" class="govuk-back-link">Back</a>
+
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Choose your destination</h1>
+    <p class="govuk-body govuk-!-margin-bottom-6">Select your space travel destination from the options below.</p>
+
+    <form action="/summary" method="POST" class="govuk-form-group">
+        <!-- Destination selection -->
+        <fieldset class="govuk-fieldset govuk-radios__fieldset govuk-!-margin-bottom-6">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l govuk-!-margin-bottom-4">
+                <h2 class="govuk-fieldset__heading">Where would you like to go?</h2>
+            </legend>
+            <p class="govuk-body govuk-!-margin-bottom-4">Your choice will determine your travel itinerary and requirements.</p>
+
+            <div class="govuk-radios">
+                <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="moon" name="destination" type="radio" value="Moon" required>
+                    <label class="govuk-label govuk-radios__label" for="moon">Moon</label>
+                </div>
+                <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="mars" name="destination" type="radio" value="Mars" required>
+                    <label class="govuk-label govuk-radios__label" for="mars">Mars</label>
+                </div>
+            </div>
+        </fieldset>
+
+        <!-- Subtitle for Contact Details -->
+        <h2 class="govuk-heading-l govuk-!-margin-bottom-4">Your contact details</h2>
+        <p class="govuk-body govuk-!-margin-bottom-6">Please enter your contact details so we can confirm your space travel booking.</p>
+
+        <!-- First name -->
+        <div class="govuk-form-group govuk-!-margin-bottom-6">
+            <label class="govuk-label" for="first-name">First name</label>
+            <input class="govuk-input govuk-input--width-20" id="first-name" name="first_name" type="text" required aria-describedby="first-name-hint">
+        </div>
+
+        <!-- Last name -->
+        <div class="govuk-form-group govuk-!-margin-bottom-6">
+            <label class="govuk-label" for="last-name">Last name</label>
+            <input class="govuk-input govuk-input--width-20" id="last-name" name="last_name" type="text" required aria-describedby="last-name-hint">
+        </div>
+
+        <!-- Address -->
+        <div class="govuk-form-group govuk-!-margin-bottom-6">
+            <label class="govuk-label" for="address-line1">Address line 1</label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="address-line1" name="address_line1" type="text" required>
+        </div>
+
+        <div class="govuk-form-group govuk-!-margin-bottom-6">
+            <label class="govuk-label" for="address-line2">Address line 2 </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="address-line2" name="address_line2" type="text">
+        </div>
+
+        <!-- County  -->
+        <div class="govuk-form-group govuk-!-margin-bottom-6">
+            <label class="govuk-label" for="county">County</label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="county" name="county" type="text" required>
+        </div>
+
+        <!-- Country  -->
+        <div class="govuk-form-group govuk-!-margin-bottom-6">
+            <label class="govuk-label" for="country">Country</label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="country" name="country" type="text" required>
+        </div>
+
+        <!-- Postcode -->
+        <div class="govuk-form-group govuk-!-margin-bottom-6">
+            <label class="govuk-label" for="postcode">Postcode</label>
+            <input class="govuk-input govuk-input--width-10" id="postcode" name="postcode" type="text" required>
+        </div>
+
+        <!-- Buttons with improved spacing -->
+        <div class="govuk-button-group govuk-!-margin-top-6">
+            <button type="submit" class="govuk-button">Continue</button>
+        </div>
+    </form>
+{% endblock %}
